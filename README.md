@@ -2,7 +2,7 @@
 
 Clone this -> npm install -> node src/index.js
 
-:boom: Node 시작 전에 _config.js_ 파일을 최상단 디렉토리 안에 넣어 주셈... :boom:
+:boom: Node 시작 전에 _config.js_ 파일을 최상단 디렉토리 안에 넣어 주세요 :boom:
 
 ```javascript
 ** config.js **
