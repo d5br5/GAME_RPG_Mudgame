@@ -3,6 +3,7 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 const crypto = require("crypto");
 require("dotenv").config();
+const port = process.env.PORT || 4000;
 
 const {
 	constantManager,
@@ -55,8 +56,8 @@ app.get("/ending", (req, res) => {
 	res.render("ending", {score: req.score});
 });
 
-app.listen(3000, () => {
-	console.log(`listening at http://localhost:3000`); // 정상 시작 알림
+app.listen(port, () => {
+	console.log(`listening at http://localhost:${port}`); // 정상 시작 알림
 });
 
 app.get("/img", (req, res) => {
