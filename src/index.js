@@ -1,17 +1,9 @@
 const express = require("express");
 const fs = require("fs");
 const mongoose = require("mongoose");
-const crypto = require("crypto");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
-
-const {
-	constantManager,
-	mapManager,
-	inventoryManager,
-} = require("./datas/Manager");
-const {Player} = require("./models/Player");
-// const { secret, mongoURI } = require("../config");
+const {constantManager} = require("./datas/Manager");
 const mongoURI = process.env.mongoURI;
 const {action} = require("./controller/action");
 const {signup} = require("./controller/sign");
@@ -22,7 +14,7 @@ const app = express();
 app.use(express.urlencoded({extended: true}));
 app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
-app.use(express.static("img"));
+app.use(express.static("./img/"));
 app.engine("html", require("ejs").renderFile);
 
 mongoose
@@ -47,113 +39,11 @@ app.get("/music", (req, res) => {
 app.get("/game", (req, res) => {
 	res.render("game");
 });
-
 app.post("/signup", signup, (req, res) => {});
-
 app.post("/action", authentication, action);
-
 app.get("/ending", (req, res) => {
 	res.render("ending", {score: req.score});
 });
-
 app.listen(port, () => {
-	console.log(`listening at http://localhost:${port}`); // 정상 시작 알림
-});
-
-app.get("/img", (req, res) => {
-	fs.readFile("./img/main.png", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img1", (req, res) => {
-	fs.readFile("./img/1.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img2", (req, res) => {
-	fs.readFile("./img/2.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img3", (req, res) => {
-	fs.readFile("./img/3.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img4", (req, res) => {
-	fs.readFile("./img/4.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img5", (req, res) => {
-	fs.readFile("./img/5.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img6", (req, res) => {
-	fs.readFile("./img/6.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img7", (req, res) => {
-	fs.readFile("./img/7.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img8", (req, res) => {
-	fs.readFile("./img/8.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img9", (req, res) => {
-	fs.readFile("./img/9.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img10", (req, res) => {
-	fs.readFile("./img/10.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img11", (req, res) => {
-	fs.readFile("./img/11.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img12", (req, res) => {
-	fs.readFile("./img/12.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
-});
-
-app.get("/img13", (req, res) => {
-	fs.readFile("./img/13.jpg", (error, data) => {
-		res.writeHead(200, {"Content-Type": "text/html"});
-		res.end(data);
-	});
+	console.log(`listening at http://localhost:${port}`);
 });

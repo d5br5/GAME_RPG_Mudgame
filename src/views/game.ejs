@@ -3,7 +3,6 @@
 <head>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <!-- JavaScript Bundle with Popper -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
@@ -11,8 +10,6 @@
 <body>
   <div class="container-fluid">
     <div class="row justify-content-md-center align-items-center text-center" style="background-color:rgb(0, 0,128);">
-      <!-- <div class="row justify-content-md-center align-items-center text-center" style="background-color:darkseagreen;"> -->
-      <!-- <h1> -->
       <h2 style="color: white;">player : <span id="playerName"></span></h2>
       <h1 style="color: white">
         [<span id="title"></span>] 과정을 무사히 끝마치자.
@@ -21,10 +18,7 @@
         <h3>[ Total move : <span id="move"></span> ]</h3>
       </div>
     </div>
-    <div class="row justify-content-md-center align-items-center text-center" style="background-color: rgb(0, 0,128); padding-top:8px; padding-bottom:15px">
-      <!-- <div class="row justify-content-md-center align-items-center text-center" style="background-color:darkseagreen;"> -->
-      <!-- <div class="col-lg-3"> -->
-     
+    <div class="row justify-content-md-center align-items-center text-center" style="background-color: rgb(0, 0,128); padding-top:8px; padding-bottom:15px">     
       <div class="col-md-2" style="width: 240px;">
         <button class="btn btn-info" id="reroll">능력치재설정</button>
       </div>
@@ -38,16 +32,13 @@
 
     <div>
       <div class="row justify-content-md-center align-items-center text-center">
-        <!-- <div class="col-lg-2" style="height: 10em; background-color: burlywood;"> -->
         <div class="col-lg-2" style="height: 10em; width: 350px; background-color: rgb(245, 241, 222);">
           <b>[Event]</b><br>
           <div id="event" style="white-space: pre-line"></div>
         </div>
-
         <div class="col-md-1">
           <button type="button" class="btn btn-success" value="0">N</button>
         </div>
-        <!-- <div class="col-lg-2" style="height: 10em; background-color: burlywood;"> -->
         <div class="col-lg-2" style="height: 10em; width: 350px; background-color: rgb(245, 241, 222);">
           <b>[System]</b><br>
           <div id="system" style="white-space:pre-line"></div>
@@ -67,7 +58,6 @@
         </div>
       </div>
       <div class="row justify-content-md-center align-items-center text-center">
-        <!-- <div class="col-lg-2" style="height: 10em; background-color: burlywood;"> -->
         <div class="col-lg-2" style="height: 10em; width: 350px; background-color: rgb(245, 241, 222);">
           <b>[Status]</b><br>
           Level: <span id="LEVEL"> 0</span><br>
@@ -79,21 +69,16 @@
         <div class="col-md-1">
           <button type="button" class="btn btn-success" value="2">S</button>
         </div>
-        <!-- <div class="col-lg-2" style="height: 10em; background-color: burlywood;"> -->
-
         <div class="col-lg-2" style="height: 10em; width: 350px; background-color: rgb(245, 241, 222); overflow: auto;">
           <b>[Inventory]</b>
           <div id="inventory" style="white-space:pre-line"></div>
         </div>
       </div>
     </div>
-  </div>
-
-
- 
+  </div> 
   </div>
   <!-- <button id="music">음악 재생</button> -->
-   <!-- <button id="cheat">렙업(치트키)</button> -->
+  <!-- <button id="cheat">렙업(치트키)</button> -->
   <script>
 
     const sendAction = (action, params = {}) => {
@@ -140,21 +125,22 @@
       });
     }
 
-    let imgary = new Array();
-        imgary.push('/img1')
-        imgary.push('/img2')
-        imgary.push('/img3')
-        imgary.push('/img4')
-        imgary.push('/img5')
-        imgary.push('/img6')
-        imgary.push('/img7')
-        imgary.push('/img8')
-        imgary.push('/img9')
-        imgary.push('/img10')
-        imgary.push('/img11')
-        imgary.push('/img12')
-        imgary.push('/img13')
-        
+    let imgary = [
+    "https://user-images.githubusercontent.com/40906871/144388848-a6998008-67c8-4442-aee2-c37c4026a605.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388849-fb819e5e-2c8f-490b-a75a-3e382129548a.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388850-a47ca4a4-7292-4aca-8f79-3296a828c5a5.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388855-1bb65d5e-abeb-458a-b897-77380aeca2f7.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388858-304aa97b-5723-48e1-abc5-7ef1e9926c06.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388861-aa4d2579-1b99-484f-8a9e-d1afde454803.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388863-5b68302b-0060-41ca-9a06-25b78a63ca3c.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388866-752ce377-0907-4bab-afa1-f699bde6a0de.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388869-3c88ef42-d82e-4197-923f-d562945b0970.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388870-ede780a3-b97b-40de-872f-b63639b623a5.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388873-cd8310e4-8e1f-447a-8ed8-512b96fe2c52.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388875-4adfcae6-de65-438e-85a5-458daacb7e76.jpg",
+    "https://user-images.githubusercontent.com/40906871/144388844-580e98da-e962-4d42-93c6-2bb9a47011e0.jpg"
+    ];
+            
     const reroll = $('#reroll');
     reroll.bind('click', function () {
       sendAction('reroll');
