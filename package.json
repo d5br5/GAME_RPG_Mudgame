@@ -1,23 +1,23 @@
 {
-	"name": "node-http-server",
-	"version": "1.0.0",
-	"description": "Node.js example server starter project",
-	"main": "src/index.js",
-	"scripts": {
-		"start": "node src/index.js"
-	},
-	"dependencies": {
-		"crypto": "^1.0.1",
-		"dotenv": "^10.0.0",
-		"ejs": "^3.1.5",
-		"express": "^4.17.1",
-		"express-validator": "^6.8.0",
-		"fs": "0.0.1-security",
-		"mongodb": "^3.6.3",
-		"mongoose": "^5.11.8"
-	},
-	"devDependencies": {
-		"nodemon": "1.18.4"
-	},
-	"keywords": []
+  "name": "node-http-server",
+  "version": "1.0.0",
+  "description": "Node.js example server starter project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.8.0",
+    "fs": "0.0.1-security",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  },
+  "keywords": []
 }
