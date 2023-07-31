@@ -13,7 +13,6 @@
 ### Deploy
 
 - Tool : Heroku
-- https://snu-rpg.herokuapp.com/
 
 ### Built with
 
